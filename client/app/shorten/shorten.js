@@ -8,9 +8,7 @@ angular.module('shortly.shorten', [])
     Links.addLink($scope.link)
       .then(function(resp){
         console.log(resp);
-      })
-      .catch(function (error) {
-        console.error(error);
       });
+
   };
 });

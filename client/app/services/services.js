@@ -2,10 +2,20 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   // Your code here
+  var getLinks = function(){
+    return $http({
+      method: 'GET',
+      url: '/api/links'
+    })
+    .then(function (resp) {
+      return resp.data;
+    });
+  };
+
   var addLink = function (link) {
     return $http({
       method: 'POST',
-      url: '/api/links/',
+      url: '/api/links',
       data: link
     })
     .then(function (resp) {
@@ -14,7 +24,8 @@ angular.module('shortly.services', [])
   };
 
   return {
-    addLink: addLink
+    addLink: addLink,
+    getLinks: getLinks
   };
 
 })
