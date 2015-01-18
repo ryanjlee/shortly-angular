@@ -1,8 +1,9 @@
 <div id='container' ng-controller="ShortenController">
 <!-- Your code here -->
-  <form ng-submit='addLink()'>
-    <input type='text' placeholder='add a url!' ng-model='link.url'>
-    <input type='submit' value='Shorten'>
+  <form ng-submit='addLink()' novalidate>
+    <span ng-show=>You must enter a valid URL</span>
+    <input type='url' placeholder='add a url!' ng-model='link.url'>
+    <input type='submit' value='Shorten' ng-disabled='!checkUrl(link.url)'>
   </form>
     <!-- <img class='spinner' src='/assets/spiffygif_46x46.gif'> -->
   <div class='message'></div>

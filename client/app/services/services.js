@@ -12,16 +12,6 @@ angular.module('shortly.services', [])
     });
   };
 
-  // var getUrl = function(code){
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/api/links' + code
-  //   })
-  //   .then(function (resp) {
-  //     return resp.data;
-  //   });
-  // };
-
   var addLink = function (link) {
     return $http({
       method: 'POST',
@@ -36,7 +26,6 @@ angular.module('shortly.services', [])
   return {
     addLink: addLink,
     getLinks: getLinks,
-    // getUrl: getUrl
   };
 
 })
